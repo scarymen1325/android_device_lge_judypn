@@ -32,6 +32,8 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Audio
 PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/audio/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml \
+    $(DEVICE_PATH)/audio/audio/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration_a2dp_offload_disabled.xml \
     $(DEVICE_PATH)/audio/audio_effects_tune.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects_tune.xml \
     $(DEVICE_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
     $(DEVICE_PATH)/audio/audio_platform_info_mono.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_mono.xml \
@@ -52,10 +54,6 @@ $(foreach f,$(wildcard $(DEVICE_PATH)/rootdir/etc/init/hw/*.rc),\
 # IRSC
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
-
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.judypn
 
 # NFC
 PRODUCT_COPY_FILES += \
